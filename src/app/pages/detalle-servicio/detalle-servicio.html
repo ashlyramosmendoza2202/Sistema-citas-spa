@@ -1,1 +1,33 @@
-<p>detalle-servicio works!</p>
+<section class="container">
+  <a routerLink="/servicios" class="volver-link">← Volver a servicios</a>
+
+  @if (servicio) {
+    <div class="card detalle-box">
+      <div class="detalle-img">
+        <img [src]="servicio.imagen" [alt]="servicio.nombre" />
+      </div>
+
+      <div class="detalle-info">
+        <span class="cat-badge">{{ servicio.categoria }}</span>
+        <h1>{{ servicio.nombre }}</h1>
+        <p class="detalle-desc">{{ servicio.descripcion }}</p>
+
+        <div class="detalle-specs">
+          <div>
+            <span>Duración</span>
+            <strong>{{ servicio.duracion }}</strong>
+          </div>
+          <div>
+            <span>Inversión</span>
+            <strong>RD$ {{ servicio.precio }}</strong>
+          </div>
+        </div>
+
+        <div class="detalle-btns">
+          <a routerLink="/reservar" class="btn-pink">Reservar este tratamiento</a>
+          <a routerLink="/terapeutas" class="btn-primary">Ver terapeutas</a>
+        </div>
+      </div>
+    </div>
+  }
+</section>

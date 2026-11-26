@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { SpaData } from '../../services/spa-data';
 
 @Component({
-  imports: [],
   selector: 'app-servicios',
-  styleUrl: './servicios.css',
+  imports: [RouterLink],
   templateUrl: './servicios.html',
+  styleUrl: './servicios.css'
 })
-export class Servicios {}
+export class Servicios {
+  constructor(public spa: SpaData) {}
+}

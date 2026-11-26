@@ -1,1 +1,27 @@
-<p>servicios works!</p>
+<section class="container">
+  <h1 class="section-title">Servicios de ASHLUX SPA BEAUTY</h1>
+  <p class="section-subtitle">Masajes, tratamientos faciales y rituales corporales pensados para tu bienestar.</p>
+
+  <div class="servicios-grid">
+    @for (item of spa.servicios; track item.id) {
+      <article class="card servicio-card">
+        <img [src]="item.imagen" [alt]="item.nombre" />
+        <div class="servicio-body">
+          <div class="servicio-meta">
+            <span class="cat-badge">{{ item.categoria }}</span>
+            <span class="duracion">{{ item.duracion }}</span>
+          </div>
+          <h2>{{ item.nombre }}</h2>
+          <p class="servicio-desc">{{ item.descripcion }}</p>
+          <div class="servicio-footer">
+            <strong class="precio">RD$ {{ item.precio }}</strong>
+            <div class="acciones">
+              <a [routerLink]="['/servicio', item.id]" class="btn-detalle">Ver detalle</a>
+              <a [routerLink]="['/reservar']" class="btn-pink">Reservar</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
