@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-page: #FDF8F6;
+  --bg-card: #FFFFFF;
+  --brown-dark: #4A2C2A;
+  --brown-soft: #7D5A54;
+  --pink-blush: #E8B4B8;
+  --pink-deep: #C9868E;
+  --pink-light: #FBECEF;
+  --border-soft: #F0DFDD;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--brown-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: var(--brown-soft);
+  margin-bottom: 28px;
+}
+
+.btn-primary {
+  background-color: var(--brown-dark);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.96rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover {
+  background-color: #633B38;
+  transform: translateY(-1px);
+}
+
+.btn-pink {
+  background-color: var(--pink-blush);
+  color: var(--brown-dark);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.96rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.btn-pink:hover {
+  background-color: var(--pink-deep);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(74, 44, 42, 0.06);
+}
