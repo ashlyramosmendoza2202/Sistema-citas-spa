@@ -1,1 +1,47 @@
-<p>reservas works!</p>
+<section class="container">
+  <div class="reservas-header">
+    <div>
+      <h1 class="section-title">Listado de Reservas</h1>
+      <p class="section-subtitle">Consulta las citas programadas con fecha, clienta, servicio y estado.</p>
+    </div>
+    <a routerLink="/reservar" class="btn-pink">+ Nueva Reserva</a>
+  </div>
+
+  <div class="card tabla-wrap">
+    <table class="reservas-table">
+      <thead>
+        <tr>
+          <th>Fecha &amp; Hora</th>
+          <th>Clienta</th>
+          <th>Servicio</th>
+          <th>Terapeuta</th>
+          <th>Estado</th>
+          <th>Acción visual</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (r of spa.reservas; track r.id) {
+          <tr>
+            <td>
+              <strong>{{ r.fecha }}</strong>
+              <span class="hora-sub">{{ r.hora }}</span>
+            </td>
+            <td>{{ r.cliente }}</td>
+            <td>{{ r.servicio }}</td>
+            <td>{{ r.terapeuta }}</td>
+            <td>
+              <span class="estado-badge" [class.confirmada]="r.estado === 'Confirmada'">
+                {{ r.estado }}
+              </span>
+            </td>
+            <td>
+              <button type="button" class="btn-toggle" (click)="cambiarEstado(r)">
+                Alternar estado
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

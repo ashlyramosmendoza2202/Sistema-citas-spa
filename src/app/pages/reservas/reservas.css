@@ -1,0 +1,77 @@
+.reservas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.tabla-wrap {
+  overflow-x: auto;
+  padding: 8px;
+}
+
+.reservas-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.reservas-table th,
+.reservas-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.93rem;
+}
+
+.reservas-table th {
+  color: var(--brown-dark);
+  background-color: var(--pink-light);
+  font-weight: 700;
+}
+
+.reservas-table td {
+  color: var(--brown-soft);
+}
+
+.reservas-table td strong {
+  display: block;
+  color: var(--brown-dark);
+}
+
+.hora-sub {
+  font-size: 0.82rem;
+  color: var(--brown-soft);
+}
+
+.estado-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: #F7EAE8;
+  color: var(--brown-soft);
+}
+
+.estado-badge.confirmada {
+  background-color: var(--pink-blush);
+  color: var(--brown-dark);
+}
+
+.btn-toggle {
+  background-color: var(--bg-page);
+  color: var(--brown-dark);
+  border: 1px solid var(--border-soft);
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-toggle:hover {
+  border-color: var(--brown-dark);
+}

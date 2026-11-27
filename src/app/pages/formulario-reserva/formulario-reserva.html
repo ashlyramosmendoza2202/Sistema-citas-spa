@@ -1,1 +1,108 @@
-<p>formulario-reserva works!</p>
+<section class="container">
+  <h1 class="section-title">Agendar Cita</h1>
+  <p class="section-subtitle">Selecciona visualmente tu tratamiento, especialista, fecha y horario en ASHLUX SPA BEAUTY.</p>
+
+  <div class="card form-card">
+    @if (errorValidacion) {
+      <div class="alert-error">
+        Por favor completa tu nombre, servicio, terapeuta, fecha y horario antes de confirmar.
+      </div>
+    }
+
+    @if (mensajeExito) {
+      <div class="alert-success">
+        <div>
+          <strong>¡Reserva registrada!</strong>
+          <p>{{ mensajeExito }}</p>
+        </div>
+        <a routerLink="/reservas" class="btn-primary">Ver en Reservas →</a>
+      </div>
+    }
+
+    <form (ngSubmit)="agendarCita()" class="form-grid">
+      <div class="form-group full">
+        <label for="cliente">Nombre de la clienta</label>
+        <input
+          id="cliente"
+          name="cliente"
+          type="text"
+          [(ngModel)]="cliente"
+          placeholder="Ej. Ashly Ramos"
+          required
+        />
+      </div>
+
+      <div class="form-group full">
+        <label>Selección visual de servicio</label>
+        <div class="visual-selector">
+          @for (srv of spa.servicios; track srv.id) {
+            <button
+              type="button"
+              class="visual-option"
+              [class.selected]="servicioSeleccionado === srv.nombre"
+              (click)="seleccionarServicio(srv.nombre)"
+            >
+              <img [src]="srv.imagen" [alt]="srv.nombre" />
+              <div class="option-info">
+                <strong>{{ srv.nombre }}</strong>
+                <span>{{ srv.duracion }} · RD$ {{ srv.precio }}</span>
+              </div>
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label>Selección visual de terapeuta</label>
+        <div class="chips-grid">
+          @for (t of spa.terapeutas; track t.id) {
+            <button
+              type="button"
+              class="chip-option"
+              [class.selected]="terapeutaSeleccionada === t.nombre"
+              (click)="seleccionarTerapeuta(t.nombre)"
+            >
+              <img [src]="t.imagen" [alt]="t.nombre" />
+              <div>
+                <strong>{{ t.nombre }}</strong>
+                <span>{{ t.especialidad }}</span>
+              </div>
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha de la cita</label>
+        <input
+          id="fecha"
+          name="fecha"
+          type="date"
+          [(ngModel)]="fecha"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Horario disponible</label>
+        <div class="horarios-grid">
+          @for (h of horarios; track h) {
+            <button
+              type="button"
+              class="hora-btn"
+              [class.selected]="hora === h"
+              (click)="seleccionarHora(h)"
+            >
+              {{ h }}
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="form-actions full">
+        <button type="submit" class="btn-pink">Confirmar Reserva</button>
+        <a routerLink="/reservas" class="btn-primary">Ver Listado de Citas</a>
+      </div>
+    </form>
+  </div>
+</section>
