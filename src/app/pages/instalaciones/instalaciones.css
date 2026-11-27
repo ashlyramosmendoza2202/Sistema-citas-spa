@@ -1,0 +1,44 @@
+.salas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.sala-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.sala-body {
+  padding: 20px;
+}
+
+.sala-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sala-top h2 {
+  font-size: 1.25rem;
+  color: var(--brown-dark);
+}
+
+.cap-badge {
+  background-color: var(--pink-light);
+  color: var(--brown-dark);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sala-body p {
+  color: var(--brown-soft);
+  font-size: 0.94rem;
+  margin-bottom: 18px;
+}

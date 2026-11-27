@@ -1,0 +1,40 @@
+.terapeutas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.terapeuta-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.terapeuta-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terapeuta-body h2 {
+  font-size: 1.2rem;
+  color: var(--brown-dark);
+}
+
+.especialidad {
+  color: var(--brown-soft);
+  font-size: 0.92rem;
+}
+
+.exp-badge {
+  display: inline-block;
+  width: fit-content;
+  background-color: var(--pink-light);
+  color: var(--brown-dark);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 6px 0 10px;
+}

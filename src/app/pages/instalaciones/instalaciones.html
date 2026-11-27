@@ -1,1 +1,20 @@
-<p>instalaciones works!</p>
+<section class="container">
+  <h1 class="section-title">Instalaciones y Salas</h1>
+  <p class="section-subtitle">Espacios tranquilos y acogedores diseñados para tu descanso.</p>
+
+  <div class="salas-grid">
+    @for (sala of spa.instalaciones; track sala.nombre) {
+      <article class="card sala-card">
+        <img [src]="sala.imagen" [alt]="sala.nombre" />
+        <div class="sala-body">
+          <div class="sala-top">
+            <h2>{{ sala.nombre }}</h2>
+            <span class="cap-badge">{{ sala.capacidad }}</span>
+          </div>
+          <p>{{ sala.descripcion }}</p>
+          <a routerLink="/reservar" class="btn-primary">Reservar espacio</a>
+        </div>
+      </article>
+    }
+  </div>
+</section>

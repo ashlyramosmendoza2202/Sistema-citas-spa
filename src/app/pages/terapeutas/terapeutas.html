@@ -1,1 +1,18 @@
-<p>terapeutas works!</p>
+<section class="container">
+  <h1 class="section-title">Nuestras Terapeutas</h1>
+  <p class="section-subtitle">Especialistas dedicadas a brindarte una experiencia cálida y profesional.</p>
+
+  <div class="terapeutas-grid">
+    @for (t of spa.terapeutas; track t.id) {
+      <article class="card terapeuta-card">
+        <img [src]="t.imagen" [alt]="t.nombre" />
+        <div class="terapeuta-body">
+          <h2>{{ t.nombre }}</h2>
+          <p class="especialidad">{{ t.especialidad }}</p>
+          <span class="exp-badge">Experiencia: {{ t.experiencia }}</span>
+          <a routerLink="/reservar" class="btn-pink">Agendar con especialista</a>
+        </div>
+      </article>
+    }
+  </div>
+</section>
